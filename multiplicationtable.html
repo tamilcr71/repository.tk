@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+title:
+    multiplication table excercise 
+    for loop syntax :
+    for(<variable-value-initialization part>;<conditional-part>;<increment or decrement variable part>){
+        for loop defenition part or body of for loop or develop for loop
+    }
+    'for' loop units :
+    a. variable value initialization part 
+    b. conditional part 
+    c. increment or decrement variable value part
+    d. body of for loop
+
+    'for' loop first time only following units :
+    a,b,d
+    'for' loop process 2nd time onwards :
+    c,b,d
+
+    note:
+    'c','b',and 'd' units process continuously until conditional part return false value 
+-->
+
+<head>
+    <script src="utypecasting.js"></script>
+</head>
+<script>
+    function btncancel_onclick(){
+        location.href="multiplicationtable.html";
+    }
+    function btnfind_onclick(){
+        var mn=nummn.value;
+        mn=UToint(mn);
+        nummn.value=mn;
+        //for loop process while 'i' value from 1 to 20 
+        //for loop terminate when conditional part return false when i value is 21
+        var s="";
+        //s denote string 
+        //mn=7
+        //1*mn=1*mn
+        //...
+        //20*mn=20*mn
+        //i variable display values from  1 to 20 with help of for loop
+        for(let i=1; i < 21; i++){
+            s+=i+"x"+mn+"="+(i*mn)+"<br>";
+        }
+        dvop.innerHTML=s;
+    }
+
+</script>
+<table border="1">
+    <tr>
+        <td>multiplication number</td>
+        <td>
+        <input
+        type="number"
+        placeholder="1"
+        min="1"
+        max="20"
+        id="nummn"
+        />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="cancel"
+            onclick="btncancel_onclick();"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="find"
+            onclick="btnfind_onclick();"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>result</td>
+        <td><div id="dvop">wait...</div></td>
+    </tr>
+</table>

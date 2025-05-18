@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<!--
+title:
+example for exam result excercise using GUI components are number, textbox, radiobutton and button
+-->
+
+<head>
+    <script src="utypecasting.js"></script>
+
+    <link href="udf1.css" rel="stylesheet">
+    <script>
+        function btnfind_onclick(){
+            //tramfer value from html to js
+            var rno=numrno.value;
+            var m1=numm1.value;
+            var m2=numm2.value;
+            rno=UToint(rno);
+            m1=UToFloat(m1);
+            m2=UToFloat(m2);
+            var total=m1+m2;
+            var avg=total /2;
+            var result=m1 > 34.4 && m2 >34.4;
+            //tranfer value form js to html
+            numrno.value=rno;
+            //'toFixed' function alter decimal part
+            numm1.value=m1.toFixed(2);
+            numm2.value=m2.toFixed(2);
+
+            tbxtotal.value=total;
+            tbxavg.value=avg;
+
+            if (result){
+                rdobtnrp.checked=true;
+            }else{
+                rdobtnrf.checked=true;
+
+
+            }
+        }
+    </script>
+</head>
+
+<table border="0">
+    <tr>
+        <td>Roll No</td>
+        <td>
+            <input
+            type="number"
+            min="1001"
+            max="9999"
+            placeholder="0000"
+            id="numrno"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            <input
+            type="text"
+            placeholder="unknown"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Mark-1</td>
+        <td>
+            <input
+            type="number"
+            min="0"
+            max="100"
+            placeholder="000"
+            id="numm1"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Mark-2</td>
+        <td>
+            <input
+            type="number"
+            min="0"
+            max="100"
+            placeholder="000"
+            id="numm2"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            <input
+            type="number"
+            placeholder="000"
+            id="tbxtotal"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Average</td>
+        <td>
+            <input
+            type="number"
+            placeholder="000"
+            id="tbxavg"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Result</td>
+
+        <td>
+            <input
+            type="radio"
+            id="rdobtnrf"
+            name="rdobtnres"
+            disabled="disabled"
+            checked="checked"
+            />fail
+        </td>
+        <td>
+            <input
+            type="radio"
+            id="rdobtnrp"
+            name="rdobtnres"
+            disabled="disabled"
+            />pass
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="find"
+            onclick="btnfind_onclick();"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="cancel"
+            onclick="location.href='resultrb.html'"
+            />
+        </td>
+    </tr>
+        
+</table>

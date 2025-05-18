@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <script src="utypecasting.js"></script>
+    <script>
+        function btnfind_onclick(){
+            var p= tbxp.value;
+            var n=tbxn.value;
+            var r =tbxr.value;
+            p=UToFloat(p);
+            n=UToFloat(n);
+            r=UToFloat(r);
+
+            var s1=tbxpnr.value;
+            s1=(p*n*r)/100;
+            var np=tbxnp.value;
+            //np -p =s1
+            np=p + s1;
+
+            tbxp.value= p;
+            tbxr.value= r;
+            tbxn.value= n;
+            tbxpnr.value=s1;
+            tbxnp.value= np;            
+        }
+    </script>
+</head>
+
+<table border="1">
+    <tr>
+        <td>Principal</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.00"
+            id="tbxp"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Time Period</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.0"
+            id="tbxn"
+            />
+        </td>       
+    </tr>
+    <tr>
+        <td>rate of intrest</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.0%"
+            id="tbxr"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Simple intrest</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.0"
+            id="tbxpnr"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Net Pay</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.0"
+            id="tbxnp"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="cancel"
+            onclick="location.href='simpleintrest.html'"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="find"
+            onclick="btnfind_onclick();"
+            />
+        </td>
+    </tr>
+</table>
+
+

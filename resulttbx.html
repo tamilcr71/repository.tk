@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="utypecasting.js"></script>
+    <link href="udf1.css" rel="stylesheet"/>
+    <script>
+        function btnfind_onclick(){
+            //tranfer  value from html to js 
+            var rno = numrno.value;
+            var m1 = numm1.value;
+            var m2 = numm2.value; 
+            rno = UToint(rno);
+            m1 = UToFloat(m1);
+            m2 = UToFloat(m2);
+            var total = m1 + m2;
+            var avg = total / 2;
+            var result = m1 > 34.4 && m2 > 34.4;
+            //transfer value from js to html 
+            numrno.value = rno;
+            // 'tofixed' function develop decimal part
+            numm1.value = m1.toFixed(2);
+            numm2.value = m2.toFixed(2);
+            tbxtotal.value = total;
+            tbxavg.value = avg;
+            tbxresult.value = result ? "pass" : "fail";
+        }
+    </script>
+</head>
+
+<body>
+<table border="0">
+    <tr>
+        <td>roll no</td>
+        <td>
+            <input
+            type="number"
+            min="1001"
+            max="9999"
+            placeholder="0000"
+            id="numrno"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>
+            <input
+            type="text"
+            placeholder="UNKNOWN"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Mark-1</td>
+        <td>
+            <input
+            type="number"
+            placeholder="00"
+            id="numm1"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Mark-2</td>
+        <td>
+            <input
+            type="number"
+            placeholder="00"
+            id="numm2"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>total</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.0"
+            id="tbxtotal"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+
+    <tr>
+        <td>average</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.0"
+            id="tbxavg"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Result</td>
+        <td>
+            <input
+            type="text"
+            placeholder="Fail"
+            id="tbxresult"
+            readonly="readonly"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="cancel"
+            onclick="location.href='resulttbx.html'"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input
+            type="button"
+            value="Find"
+            onclick="btnfind_onclick();"
+            />
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+    <link href="ul.a.css" rel="stylesheet">
+    <script>
+        function btnfind_onclick(){
+         //below statements read input data from HTML as well as store data into js
+        var sal=tbxsal.value;
+        sal=parseFloat(sal);
+        sal=isNaN(sal) ? 0 :sal;
+        sal=sal < 0 ? 0: sal;
+        var hra=sal *20/100;
+        var da=sal*15/100;
+        var pf=sal*35/100;
+        var gp= hra + da + sal;
+        var np= gp - pf;
+        //below statements store output data from HTML as well as js variable
+        tbxhra.value=hra;
+        tbxda.value=da;
+        tbxpf.value=pf;
+        tbxgp= hra + da + sal;
+        tbxnp.value= gp - pf;            
+        }
+    </script>
+</head>
+
+<table border="0">
+    <tr>
+        <td>ID</td>
+        <td>
+            <input
+            type="number"
+            placeholder="0000"
+            id="tbxid"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            <input
+            type="text"
+            placeholder="unknown"
+            id="tbxn"
+            />
+        </td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td>
+            <input
+            type="number"
+            placeholder="0000"
+            id="tbxsal"
+            />
+        </td>
+    </tr>
+   <tr>
+    <td>house rent allownace (tax 15%)</td>
+    <td>
+        <input
+        type="text"
+        placeholder="0.00"
+        id="tbxhra"
+        readonly="readonly"
+        />
+    </td>
+   </tr>
+   <tr>
+    
+        <td>dearness allownace (tax 15%)</td>
+        <td>
+            <input
+            type="text"
+            placeholder="0.00"
+            id="tbxda"
+            readonly="readonly"
+            />
+        </td>
+   </tr>
+   <tr>
+    <td>Provident fund(tax 35%)</td>
+    <td>
+        <input
+        type="text"
+        placeholder="0.00"
+        id="tbxpf"
+        readonly="readonly"
+        />
+    </td>
+   </tr>
+   <tr>
+    <td>Gross Pay</td>
+    <td>
+        <input
+        type="text"
+        placeholder="0.00"
+        id="tbxgp"
+        readonly="readonly"
+        />
+    </td>
+   </tr>
+   <tr>
+    <td>Net Pay</td>
+    <td>
+        <input
+        type="number"
+        placeholder="0.00"
+        id="tbxnp"
+        readonly="readonly"
+        />
+    </td>
+   </tr>
+   <tr>
+    <td>
+        <input
+        type="button"
+        value="cancel"
+        onclick="location.href='empsalallowance.html'"
+        />
+    </td>
+   </tr>
+   <tr>
+    <td>
+        <input
+        type="button"
+        value="find"
+        onclick="btnfind_onclick();"
+        />
+    </td>
+   </tr>
+
+</table>
